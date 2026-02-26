@@ -1,0 +1,160 @@
+.categories-section {
+  padding: 120px 80px;
+  background: var(--bg-primary);
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.categories-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  color: var(--accent-rose);
+  margin-bottom: 15px;
+}
+
+.categories-header p {
+  color: var(--text-secondary);
+  margin-bottom: 70px;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Card */
+.category-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.3)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  transition: 0.4s ease;
+}
+
+.category-overlay h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--accent-rose);
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.explore-btn {
+  color: var(--text-primary);
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.explore-btn:hover {
+  color: var(--accent-rose);
+}
+
+/* Hover Zoom Effect */
+.category-card:hover {
+  transform: scale(1.02);
+  transition: 0.4s ease;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .categories-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .categories-section {
+    padding: 100px 40px;
+  }
+
+  .categories-header h1 {
+    font-size: 38px;
+  }
+
+  .category-card {
+    height: 450px;
+  }
+
+  .category-overlay {
+    padding: 30px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .categories-section {
+    padding: 80px 20px;
+  }
+
+  .categories-header h1 {
+    font-size: 30px;
+  }
+
+  .categories-header p {
+    margin-bottom: 40px;
+    font-size: 14px;
+  }
+
+  .categories-grid {
+    gap: 25px;
+  }
+
+  .category-card {
+    height: 350px;
+  }
+
+  .category-overlay {
+    padding: 20px;
+  }
+
+  .category-overlay h2 {
+    font-size: 20px;
+  }
+
+  .explore-btn {
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .categories-header h1 {
+    font-size: 24px;
+  }
+
+  .category-card {
+    height: 280px;
+  }
+
+  .category-overlay h2 {
+    font-size: 18px;
+  }
+
+}

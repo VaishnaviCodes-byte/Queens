@@ -1,0 +1,63 @@
+:root {
+  --bg-primary: #0b0b0e;
+  --bg-secondary: #111115;
+
+  --accent-rose: #c78b9c;
+  --accent-gold: #d4af37;
+
+  --text-primary: #ffffff;
+  --text-secondary: #b8b8b8;
+
+  --transition-slow: 0.4s ease;
+  --transition-fast: 0.2s ease;
+}
+html, body {
+  overflow-x: hidden;
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ===== Vertical Scrollbar Styling ===== */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-rose);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b96c80;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-rose) var(--bg-primary);
+}

@@ -1,0 +1,162 @@
+.collections-page {
+  padding: 120px 80px;
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.collections-page h1 {
+  font-family: "Playfair Display", serif;
+  color: var(--accent-rose);
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.collections-page p {
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  margin-bottom: 50px;
+}
+
+.filter-buttons button {
+  background: transparent;
+  border: 1px solid var(--accent-rose);
+  color: var(--accent-rose);
+  padding: 10px 25px;
+  margin: 10px;
+  transition: 0.3s ease;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+  background: var(--accent-rose);
+  color: black;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.product-card {
+  background: #111;
+  padding: 20px;
+  transition: 0.3s ease;
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin: 15px 0 10px;
+}
+
+.price {
+  color: var(--accent-rose);
+  margin-bottom: 15px;
+}
+
+.product-card button {
+  border: 1px solid var(--accent-rose);
+  background: transparent;
+  color: var(--accent-rose);
+  padding: 10px 20px;
+  transition: 0.3s ease;
+}
+
+.product-card button:hover {
+  background: var(--accent-rose);
+  color: black;
+}
+
+@media (max-width: 1024px) {
+
+  .collections-page {
+    padding: 100px 40px;
+  }
+
+  .collections-page h1 {
+    font-size: 38px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .collections-page {
+    padding: 80px 20px;
+  }
+
+  .collections-page h1 {
+    font-size: 30px;
+  }
+
+  .collections-page p {
+    font-size: 14px;
+  }
+
+  .filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .filter-buttons button {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .collections-page h1 {
+    font-size: 24px;
+  }
+
+  .product-card {
+    padding: 15px;
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .product-card button {
+    width: 100%;
+  }
+
+}
+
+.product-card {
+  transition: 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+

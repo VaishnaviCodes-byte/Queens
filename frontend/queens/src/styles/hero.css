@@ -1,0 +1,132 @@
+.hero {
+  min-height: 100vh;
+  padding: 120px 20px 60px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+}
+
+.logo-card {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 30px;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.logo-card img {
+  width: 100%;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 70px;
+  color: var(--accent-rose);
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.btn-outline {
+  padding: 14px 35px;
+  border: 1px solid var(--accent-rose);
+  background: transparent;
+  color: var(--accent-rose);
+  transition: var(--transition-slow);
+}
+
+.btn-outline:hover {
+  background: var(--accent-rose);
+  color: black;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 100px 20px 60px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+    letter-spacing: 2px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn-outline,
+  .btn-link {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .logo-card {
+    max-width: 220px;
+  }
+
+}
