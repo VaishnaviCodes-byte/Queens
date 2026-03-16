@@ -1,28 +1,34 @@
+import rings from "../assets/categories/rings.jpg";
+import necklaces from "../assets/categories/necklaces.jpg";
+import earrings from "../assets/categories/earrings.jpg";
+import bridals from "../assets/categories/bridal.jpg";
+import royals from "../assets/categories/royal.jpg";
+
 const categories = [
   {
     id: "rings",
     title: "RINGS",
-    image: "/src/assets/categories/rings.jpg",
+    image: rings,
   },
   {
     id: "necklaces",
     title: "NECKLACES",
-    image: "/src/assets/categories/necklaces.jpg",
+    image: necklaces,
   },
   {
     id: "earrings",
     title: "EARRINGS",
-    image: "/src/assets/categories/earrings.jpg",
+    image: earrings,
   },
   {
     id: "bridal",
     title: "BRIDAL COLLECTION",
-    image: "/src/assets/categories/bridal.jpg",
+    image: bridals,
   },
   {
     id: "royal",
     title: "ROYAL EDITION",
-    image: "/src/assets/categories/royal.jpg",
+    image: royals,
   },
 ];
 
