@@ -1,6 +1,7 @@
 import "../styles/hero.css";
 import heroImage from "../assets/hero.png";
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -24,8 +25,10 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <button className="btn-outline">SHOP COLLECTION</button>
-          <button className="btn-link">EXPLORE STORY</button>
+          <Link to="/collections"><button className="btn-outline">SHOP COLLECTION</button></Link>
+          <a href="#craft">
+  <button className="btn-link">EXPLORE STORY</button>
+</a>
         </div>
       </div>
     </section>

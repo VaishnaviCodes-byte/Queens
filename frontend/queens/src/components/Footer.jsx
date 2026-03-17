@@ -1,7 +1,14 @@
 import "../styles/footer.css";
 import logo from "../assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const navigate = useNavigate();
+
+  const handleNavigation = (category) => {
+    navigate(`/collections?category=${category}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <footer className="footer">
 
@@ -27,14 +34,13 @@ function Footer() {
           </p>
         </div>
 
-        {/* Shop Column */}
         <div className="footer-col">
           <h4>SHOP</h4>
-          <a href="#">Rings</a>
-          <a href="#">Necklaces</a>
-          <a href="#">Earrings</a>
-          <a href="#">Bridal</a>
-          <a href="#">Royal Edition</a>
+          <p onClick={() => handleNavigation("rings")}>Rings</p>
+          <p onClick={() => handleNavigation("necklaces")}>Necklaces</p>
+          <p onClick={() => handleNavigation("earrings")}>Earrings</p>
+          <p onClick={() => handleNavigation("bridal")}>Bridal</p>
+          <p onClick={() => handleNavigation("royal")}>Royal Edition</p>
         </div>
 
         {/* Information Column */}

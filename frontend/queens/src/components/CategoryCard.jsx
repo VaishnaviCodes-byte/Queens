@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 function CategoryCard({ category }) {
   return (
     <div
@@ -8,9 +9,9 @@ function CategoryCard({ category }) {
     >
       <div className="category-overlay">
         <h2>{category.title}</h2>
-        <Link to={`/category/${category.id}`} className="explore-btn">
-          EXPLORE →
-        </Link>
+        <Link to={`/collections?category=${category.id}`} className="explore-btn">
+  EXPLORE →
+</Link>
       </div>
     </div>
   );

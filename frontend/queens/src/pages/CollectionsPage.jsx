@@ -6,9 +6,14 @@ import "../styles/global.css";
 // import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
 
 function CollectionsPage() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchParams] = useSearchParams();
+const categoryFromURL = searchParams.get("category") || "all";
+
+const [selectedCategory, setSelectedCategory] = useState(categoryFromURL);
   const { addToCart } = useContext(CartContext);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -17,6 +22,11 @@ function CollectionsPage() {
     selectedCategory === "all"
       ? products
       : products.filter((p) => p.category === selectedCategory);
+      useEffect(() => {
+  if (categoryFromURL) {
+    setSelectedCategory(categoryFromURL);
+  }
+}, [categoryFromURL]);
 
   return (
     <div className="collections-page">
@@ -29,7 +39,10 @@ function CollectionsPage() {
             <button
               key={cat}
               className={selectedCategory === cat ? "active" : ""}
-              onClick={() => setSelectedCategory(cat)}
+              onClick={() => {
+  setSelectedCategory(cat);
+  navigate(`/collections?category=${cat}`);
+}}
             >
               {cat.toUpperCase()}
             </button>

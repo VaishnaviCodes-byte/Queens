@@ -6,7 +6,7 @@
   height: 80px;
   padding: 0 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   z-index: 1000;
   background: rgba(13, 13, 18, 0.9);
@@ -26,6 +26,8 @@
   gap: 40px;
   font-size: 13px;
   letter-spacing: 2px;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .nav-links a {
@@ -40,6 +42,7 @@
   align-items: center;
   gap: 20px;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .nav-icons img {
@@ -81,6 +84,7 @@
 
   .navbar {
     padding: 15px 20px;
+    justify-content: space-around;
   }
 
   .nav-links {
@@ -110,6 +114,7 @@
   .nav-links {
     gap: 10px;
     font-size: 11px;
+    justify-content: space-around;
   }
 
   .nav-logo img {
@@ -130,4 +135,15 @@
 .navbar {
   backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 10px;
+    font-size: 11px;
+  }
+
+  .navbar {
+    padding: 0 15px;
+  }
 }

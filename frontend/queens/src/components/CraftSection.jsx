@@ -1,9 +1,11 @@
 import "../styles/craft.css";
 import craftImage from "../assets/craft.jpg";
 
+import { Link } from "react-router-dom";
+
 function CraftSection() {
   return (
-    <section className="craft-section">
+    <section id="craft" className="craft-section">
       <div className="craft-container">
 
         <div className="craft-image">
@@ -27,10 +29,11 @@ function CraftSection() {
             element is chosen with care. Our jewelry is more than an accessory —
             it's a celebration of strength, elegance, and the queens who wear them.
           </p>
-
+          <Link to="/collections">
           <button className="craft-btn">
             DISCOVER OUR CRAFT
-          </button>
+          </button></Link>
+          
         </div>
 
       </div>
