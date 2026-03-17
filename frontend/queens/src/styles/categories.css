@@ -1,3 +1,4 @@
+/* ================= SECTION ================= */
 .categories-section {
   padding: 120px 80px;
   background: var(--bg-primary);
@@ -6,6 +7,7 @@
   margin: 0 auto;
 }
 
+/* ================= HEADER ================= */
 .categories-header h1 {
   font-family: "Playfair Display", serif;
   font-size: 48px;
@@ -18,22 +20,35 @@
   margin-bottom: 70px;
 }
 
+/* ================= GRID ================= */
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  justify-items: center; /* 🔥 center cards */
 }
 
-/* Card */
+/* ================= CARD ================= */
 .category-card {
   position: relative;
+  width: 100%;
+  max-width: 350px; /* 🔥 keeps centered */
   aspect-ratio: 3 / 4;
+
   background-size: cover;
   background-position: center;
   overflow: hidden;
   cursor: pointer;
+
+  /* 🔥 Animation initial */
+  opacity: 0;
+  transform: translateY(80px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: transform, opacity;
 }
 
+/* ================= OVERLAY ================= */
 .category-overlay {
   position: absolute;
   inset: 0;
@@ -67,28 +82,39 @@
   color: var(--accent-rose);
 }
 
-/* Hover Zoom Effect */
+/* ================= HOVER ================= */
 .category-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
   transition: 0.4s ease;
 }
 
-/* Responsive */
-@media (max-width: 1000px) {
-  .categories-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+/* ================= SCROLL ANIMATION ================= */
+.categories-section.show .category-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
-@media (max-width: 700px) {
-  .categories-grid {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
+/* 🔥 Stagger Animation */
+.categories-section.show .category-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.categories-section.show .category-card:nth-child(2) {
+  transition-delay: 0.25s;
+}
+.categories-section.show .category-card:nth-child(3) {
+  transition-delay: 0.4s;
+}
+.categories-section.show .category-card:nth-child(4) {
+  transition-delay: 0.55s;
+}
+.categories-section.show .category-card:nth-child(5) {
+  transition-delay: 0.7s;
 }
 
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
 @media (max-width: 1024px) {
-
   .categories-section {
     padding: 100px 40px;
   }
@@ -97,18 +123,13 @@
     font-size: 38px;
   }
 
-  .category-card {
-    height: 450px;
-  }
-
   .category-overlay {
     padding: 30px;
   }
-
 }
 
+/* Small Tablet */
 @media (max-width: 768px) {
-
   .categories-section {
     padding: 80px 20px;
   }
@@ -123,12 +144,8 @@
   }
 
   .categories-grid {
+    grid-template-columns: 1fr 1fr;
     gap: 25px;
-    justify-items: center;
-  }
-
-  .category-card {
-    height: 350px;
   }
 
   .category-overlay {
@@ -142,26 +159,26 @@
   .explore-btn {
     font-size: 12px;
   }
+}
 
+/* Mobile */
+@media (max-width: 700px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 
 @media (max-width: 480px) {
-
   .categories-header h1 {
     font-size: 24px;
   }
 
   .categories-grid {
-    gap: 25px;
-    justify-items: center;
-  }
-
-  .category-card {
-    height: 280px;
+    gap: 20px;
   }
 
   .category-overlay h2 {
     font-size: 18px;
   }
-
 }

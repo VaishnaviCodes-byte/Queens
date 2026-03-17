@@ -8,8 +8,10 @@ import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 
 function CollectionsPage() {
+  const [ref, isVisible] = useScrollAnimation();
   const [searchParams] = useSearchParams();
 const categoryFromURL = searchParams.get("category") || "all";
 
@@ -29,7 +31,10 @@ const [selectedCategory, setSelectedCategory] = useState(categoryFromURL);
 }, [categoryFromURL]);
 
   return (
-    <div className="collections-page">
+    <div
+  ref={ref}
+  className={`collections-page ${isVisible ? "show" : ""}`}
+>
       <h1>COLLECTIONS</h1>
       <p>Discover timeless pieces crafted for modern queens</p>
 

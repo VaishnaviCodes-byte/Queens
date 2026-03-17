@@ -1,10 +1,15 @@
 import categories from "../data/categoryData";
 import CategoryCard from "./CategoryCard";
 import "../styles/categories.css";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 
 function Categories() {
+  const [ref, isVisible] = useScrollAnimation();
   return (
-    <section className="categories-section">
+    <section
+      ref={ref}
+      className={`categories-section ${isVisible ? "show" : ""}`}
+    >
       <div className="categories-header">
         <h1>Our Collections</h1>
         <p>Explore our curated collections of exquisite jewelry</p>
